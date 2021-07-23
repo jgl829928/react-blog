@@ -1,12 +1,11 @@
 import './App.css';
 import Routes from './routes';
+import Head from './layout/Head';
 
 function App() {
   return (
     <div className="App">
-      <header>
-        头部
-      </header>
+      <Head></Head>
       <Routes />
     </div>
   );
