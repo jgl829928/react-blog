@@ -1,10 +1,10 @@
-import './App.css';
+import styles from './App.module.less';
 import Routes from './routes';
 import Head from './layout/Head';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Head></Head>
       <Routes />
     </div>

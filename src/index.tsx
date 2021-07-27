@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'antd/dist/antd.css';
+import './assets/style/reset.css';
 import Page from './Page';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
