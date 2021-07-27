@@ -1,14 +1,21 @@
 
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
+import BlogList from "../blogList"
 import styles from "./index.module.less"
 
 const Home = () => {
     const [buttonText] = useState<string>("开始阅读");
+    const [height, setHieght] = useState<number>(1);
+    const [width, setWidth] = useState<number>(1);
     const [subtitle, setSubtitle] = useState<string>("");
-    useEffect(() => changeSubtitle(), []);
-    const changeSubtitle = () => {
+
+    useEffect(() => initData(), []);
+    const initData = () => {
+        setHieght(() => document.body.clientHeight - 2)
+        setWidth(() => document.body.clientWidth)
         addTitle()
     }
+
     const addTitle = () => {
         let title = "大胆挑战，世界总会进步"
         let count = 0
@@ -22,7 +29,7 @@ const Home = () => {
                 clearInterval(addinterval)
                 removeTitle()
             }
-        }, 200)
+        }, 150)
     }
     const removeTitle = () => {
         let title = "大胆挑战，世界总会进步"
@@ -37,24 +44,30 @@ const Home = () => {
                 clearInterval(removeinterval);
                 addTitle()
             }
-        }, 200)
+        }, 150)
+    }
+    const readBlogs = () => {
+        document.body.scrollTop = document.body.clientHeight - 64;
     }
     return (
         <div className={styles.home_content}>
-            <div className={styles.banner}>
-                <div className={styles.title}>
-                    XX's BLOG
-                </div>
-                <div className={styles.subtitle}>
-                    {subtitle}
-                </div>
-                <div className={styles.read_btn}>
-                    <svg className="icon" aria-hidden="true">
-                        <use xlinkHref="#icon-doubledown"></use>
-                    </svg>
-                    <span>{buttonText}</span>
+            <div className={styles.index_content} style={{ width: width, height: height }}>
+                <div className={styles.banner}>
+                    <div className={styles.title} >
+                        XX's BLOG
+                    </div>
+                    <div className={styles.subtitle}>
+                        <p>{subtitle}</p>
+                    </div>
+                    <div className={styles.read_btn}>
+                        <svg className="icon" aria-hidden="true">
+                            <use xlinkHref="#icon-doubledown"></use>
+                        </svg>
+                        <span onClick={readBlogs}>{buttonText}</span>
+                    </div>
                 </div>
             </div>
+            <BlogList></BlogList>
         </div>
     );
 }

@@ -1,36 +1,46 @@
 .home_content{
     width:100%;
     height:100%;
-    color:#fff;
-    background:url("../../assets/images/back.jpg");
-    background-size: 100% 110%;
-    padding-top:60px;
+    .index_content{
+        position: relative;
+        background:url("../../assets/images/back.jpg");
+        background-position: center center;
+        background-size: cover;
+        padding-top:60px;
+    }
     .banner{
         position: absolute;
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
+        color:#fff;
         .title{
             font-size:32px;
             font-weight:600;
         }
         .subtitle{
-            display:inline-block;
-            height: 14px;
-            padding:0 2px;
-            position:relative;
-            font-size:14px;
-            margin:40px 0 150px;
-        }
-        .subtitle:after{
-            content:"";
-            position:absolute;
-            right:-2px;
-            top:50%;
-            transform: translateY(-50%);
-            width:2px;
-            height:14px;
-            background:#fff;
+            position: relative;
+            height:200px;
+            padding-top:40px;
+            p{
+                position: relative;
+                display:inline-block;
+                height:20px;
+                line-height: 20px;
+                padding:0 2px;
+                position:relative;
+                font-size:14px;
+            }
+            p:after{
+                content:"";
+                position:absolute;
+                right:-2px;
+                top:50%;
+                transform: translateY(-50%);
+                width:2px;
+                height:14px;
+                background:#fff;
+            }
         }
         .read_btn{
             display: flex;

@@ -1,13 +1,16 @@
-import React from 'react';
-
-class iconSvg extends React.Component {
-    render() {
-        return (
-            <div>
-                评论
-            </div>
-        );
-    }
+interface props {
+    iconname: string,
+    fill?: string,
+    width?: number,
+    height?: number,
 }
 
-export default iconSvg;
+const SvgIcon = (props: props) => {
+    return (
+        <svg className="icon" aria-hidden="true" style={{ width: props.width, fill: props.fill, height: props.height }}>
+            <use xlinkHref={"#icon-" + props.iconname}></use>
+        </svg>
+    );
+}
+
+export default SvgIcon;
