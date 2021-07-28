@@ -1,7 +1,8 @@
 
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import BlogList from "../blogList"
 import styles from "./index.module.less"
+import SvgIcon from "../../components/iconSvg";
 
 const Home = () => {
     const [buttonText] = useState<string>("开始阅读");
@@ -11,7 +12,7 @@ const Home = () => {
 
     useEffect(() => initData(), []);
     const initData = () => {
-        setHieght(() => document.body.clientHeight - 2)
+        setHieght(() => document.body.clientHeight)
         setWidth(() => document.body.clientWidth)
         addTitle()
     }
@@ -64,6 +65,9 @@ const Home = () => {
                             <use xlinkHref="#icon-doubledown"></use>
                         </svg>
                         <span onClick={readBlogs}>{buttonText}</span>
+                    </div>
+                    <div className={styles.qq_icon}>
+                        <SvgIcon iconname="qq" fill="#fff" width={20} height={20}></SvgIcon>
                     </div>
                 </div>
             </div>

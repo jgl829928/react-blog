@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from "./header.module.less"
 
 interface obj {
@@ -6,7 +5,6 @@ interface obj {
 }
 
 const Headr = (props: obj) => {
-    console.log(props)
     return (
         <div className={styles.header_content} style={{ background: props.backColor }}>
             <div>
