@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from "./index.module.less"
 import SvgIcon from "../../components/iconSvg";
 import { Row, Col } from 'antd';
@@ -47,9 +47,9 @@ const Blog = () => {
                 </div>
                 <div className={styles.blogList_page}>
                     <Row>
-                        <Col span={8} className={styles.left_icon}><a href="" className={styles.grayBack}><SvgIcon iconname="arrow-left" fill="#34495e" width={25} height={25}></SvgIcon></a></Col>
+                        <Col span={8} className={styles.left_icon}><a href="#app/index" className={styles.grayBack}><SvgIcon iconname="arrow-left" fill="#34495e" width={25} height={25}></SvgIcon></a></Col>
                         <Col span={8} className={styles.page_text}>1 / 2</Col>
-                        <Col span={8} className={styles.right_icon}><a href="" className={styles.blackBack}><SvgIcon iconname="arrow" fill="#34495e" width={25} height={25}></SvgIcon></a></Col>
+                        <Col span={8} className={styles.right_icon}><a href="#app/index" className={styles.blackBack}><SvgIcon iconname="arrow" fill="#34495e" width={25} height={25}></SvgIcon></a></Col>
                     </Row>
                 </div>
             </div>
