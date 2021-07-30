@@ -9,14 +9,12 @@ const Home = () => {
     const [height, setHieght] = useState<number>(1);
     const [width, setWidth] = useState<number>(1);
     const [subtitle, setSubtitle] = useState<string>("");
-
-    useEffect(() => initData(), []);
-    const initData = () => {
+    const initpage = () => {
         setHieght(() => document.body.clientHeight)
         setWidth(() => document.body.clientWidth)
         addTitle()
     }
-
+    useEffect(() => { initpage() }, []); // eslint-disable-line react-hooks/exhaustive-deps
     const addTitle = () => {
         let title = "大胆挑战，世界总会进步"
         let count = 0
